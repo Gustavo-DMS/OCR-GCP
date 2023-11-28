@@ -1,0 +1,461 @@
+{
+  "textAnnotations": [
+    {
+      "locale": "und",
+      "description": "82.25\nKG",
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 48,
+            "y": 31
+          },
+          {
+            "x": 385,
+            "y": 31
+          },
+          {
+            "x": 385,
+            "y": 180
+          },
+          {
+            "x": 48,
+            "y": 180
+          }
+        ],
+        "normalizedVertices": []
+      },
+      "mid": "",
+      "score": 0.0,
+      "confidence": 0.0,
+      "topicality": 0.0,
+      "locations": [],
+      "properties": []
+    },
+    {
+      "description": "82.25",
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 48,
+            "y": 31
+          },
+          {
+            "x": 343,
+            "y": 31
+          },
+          {
+            "x": 343,
+            "y": 180
+          },
+          {
+            "x": 48,
+            "y": 180
+          }
+        ],
+        "normalizedVertices": []
+      },
+      "mid": "",
+      "locale": "",
+      "score": 0.0,
+      "confidence": 0.0,
+      "topicality": 0.0,
+      "locations": [],
+      "properties": []
+    },
+    {
+      "description": "KG",
+      "boundingPoly": {
+        "vertices": [
+          {
+            "x": 349,
+            "y": 63
+          },
+          {
+            "x": 385,
+            "y": 62
+          },
+          {
+            "x": 385,
+            "y": 86
+          },
+          {
+            "x": 349,
+            "y": 87
+          }
+        ],
+        "normalizedVertices": []
+      },
+      "mid": "",
+      "locale": "",
+      "score": 0.0,
+      "confidence": 0.0,
+      "topicality": 0.0,
+      "locations": [],
+      "properties": []
+    }
+  ],
+  "fullTextAnnotation": {
+    "pages": [
+      {
+        "width": 478,
+        "height": 198,
+        "blocks": [
+          {
+            "boundingBox": {
+              "vertices": [
+                {
+                  "x": 48,
+                  "y": 31
+                },
+                {
+                  "x": 343,
+                  "y": 31
+                },
+                {
+                  "x": 343,
+                  "y": 180
+                },
+                {
+                  "x": 48,
+                  "y": 180
+                }
+              ],
+              "normalizedVertices": []
+            },
+            "paragraphs": [
+              {
+                "boundingBox": {
+                  "vertices": [
+                    {
+                      "x": 48,
+                      "y": 31
+                    },
+                    {
+                      "x": 343,
+                      "y": 31
+                    },
+                    {
+                      "x": 343,
+                      "y": 180
+                    },
+                    {
+                      "x": 48,
+                      "y": 180
+                    }
+                  ],
+                  "normalizedVertices": []
+                },
+                "words": [
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 48,
+                          "y": 31
+                        },
+                        {
+                          "x": 343,
+                          "y": 31
+                        },
+                        {
+                          "x": 343,
+                          "y": 180
+                        },
+                        {
+                          "x": 48,
+                          "y": 180
+                        }
+                      ],
+                      "normalizedVertices": []
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 48,
+                              "y": 31
+                            },
+                            {
+                              "x": 117,
+                              "y": 31
+                            },
+                            {
+                              "x": 117,
+                              "y": 180
+                            },
+                            {
+                              "x": 48,
+                              "y": 180
+                            }
+                          ],
+                          "normalizedVertices": []
+                        },
+                        "text": "8",
+                        "confidence": 0.0
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 121,
+                              "y": 31
+                            },
+                            {
+                              "x": 189,
+                              "y": 31
+                            },
+                            {
+                              "x": 189,
+                              "y": 180
+                            },
+                            {
+                              "x": 121,
+                              "y": 180
+                            }
+                          ],
+                          "normalizedVertices": []
+                        },
+                        "text": "2",
+                        "confidence": 0.0
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 145,
+                              "y": 31
+                            },
+                            {
+                              "x": 206,
+                              "y": 31
+                            },
+                            {
+                              "x": 206,
+                              "y": 180
+                            },
+                            {
+                              "x": 145,
+                              "y": 180
+                            }
+                          ],
+                          "normalizedVertices": []
+                        },
+                        "text": ".",
+                        "confidence": 0.0
+                      },
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 192,
+                              "y": 31
+                            },
+                            {
+                              "x": 263,
+                              "y": 31
+                            },
+                            {
+                              "x": 263,
+                              "y": 180
+                            },
+                            {
+                              "x": 192,
+                              "y": 180
+                            }
+                          ],
+                          "normalizedVertices": []
+                        },
+                        "text": "2",
+                        "confidence": 0.0
+                      },
+                      {
+                        "property": {
+                          "detectedBreak": {
+                            "type": 5,
+                            "isPrefix": false
+                          },
+                          "detectedLanguages": []
+                        },
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 280,
+                              "y": 31
+                            },
+                            {
+                              "x": 343,
+                              "y": 31
+                            },
+                            {
+                              "x": 343,
+                              "y": 180
+                            },
+                            {
+                              "x": 280,
+                              "y": 180
+                            }
+                          ],
+                          "normalizedVertices": []
+                        },
+                        "text": "5",
+                        "confidence": 0.0
+                      }
+                    ],
+                    "confidence": 0.0
+                  }
+                ],
+                "confidence": 0.0
+              }
+            ],
+            "blockType": 1,
+            "confidence": 0.0
+          },
+          {
+            "boundingBox": {
+              "vertices": [
+                {
+                  "x": 349,
+                  "y": 63
+                },
+                {
+                  "x": 385,
+                  "y": 62
+                },
+                {
+                  "x": 385,
+                  "y": 86
+                },
+                {
+                  "x": 349,
+                  "y": 87
+                }
+              ],
+              "normalizedVertices": []
+            },
+            "paragraphs": [
+              {
+                "boundingBox": {
+                  "vertices": [
+                    {
+                      "x": 349,
+                      "y": 63
+                    },
+                    {
+                      "x": 385,
+                      "y": 62
+                    },
+                    {
+                      "x": 385,
+                      "y": 86
+                    },
+                    {
+                      "x": 349,
+                      "y": 87
+                    }
+                  ],
+                  "normalizedVertices": []
+                },
+                "words": [
+                  {
+                    "boundingBox": {
+                      "vertices": [
+                        {
+                          "x": 349,
+                          "y": 63
+                        },
+                        {
+                          "x": 385,
+                          "y": 62
+                        },
+                        {
+                          "x": 385,
+                          "y": 86
+                        },
+                        {
+                          "x": 349,
+                          "y": 87
+                        }
+                      ],
+                      "normalizedVertices": []
+                    },
+                    "symbols": [
+                      {
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 349,
+                              "y": 64
+                            },
+                            {
+                              "x": 369,
+                              "y": 64
+                            },
+                            {
+                              "x": 369,
+                              "y": 87
+                            },
+                            {
+                              "x": 349,
+                              "y": 87
+                            }
+                          ],
+                          "normalizedVertices": []
+                        },
+                        "text": "K",
+                        "confidence": 0.0
+                      },
+                      {
+                        "property": {
+                          "detectedBreak": {
+                            "type": 5,
+                            "isPrefix": false
+                          },
+                          "detectedLanguages": []
+                        },
+                        "boundingBox": {
+                          "vertices": [
+                            {
+                              "x": 367,
+                              "y": 63
+                            },
+                            {
+                              "x": 385,
+                              "y": 63
+                            },
+                            {
+                              "x": 385,
+                              "y": 86
+                            },
+                            {
+                              "x": 367,
+                              "y": 86
+                            }
+                          ],
+                          "normalizedVertices": []
+                        },
+                        "text": "G",
+                        "confidence": 0.0
+                      }
+                    ],
+                    "confidence": 0.0
+                  }
+                ],
+                "confidence": 0.0
+              }
+            ],
+            "blockType": 1,
+            "confidence": 0.0
+          }
+        ],
+        "confidence": 0.0
+      }
+    ],
+    "text": "82.25\nKG"
+  },
+  "faceAnnotations": [],
+  "landmarkAnnotations": [],
+  "logoAnnotations": [],
+  "labelAnnotations": [],
+  "localizedObjectAnnotations": []
+}

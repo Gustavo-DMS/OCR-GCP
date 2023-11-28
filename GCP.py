@@ -2,9 +2,9 @@ import os
 import base64
 from google.cloud import vision
 
-for i in os.listdir("Fotos HC"):
+for i in os.listdir("Fotos HC Crop"):
 # Convert the image to base64 format
-    with open(f"Fotos HC/{i}", "rb") as imagem:
+    with open(f"Fotos HC Crop/{i}", "rb") as imagem:
         encoded_image = base64.b64encode(imagem.read()).decode()
         client = vision.ImageAnnotatorClient()
         response = client.annotate_image({
@@ -13,8 +13,6 @@ for i in os.listdir("Fotos HC"):
         })
         # print(response)
         salvar = i.split(".")[0]
-        fds = open(f"resultados/{salvar}.json","w")
+        fds = open(f"resultados crop/{salvar}.json","w")
         teste = vision.AnnotateImageResponse.to_json(response)
         fds.write(f"{teste}")
-
-
