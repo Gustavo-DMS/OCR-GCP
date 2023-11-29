@@ -3,6 +3,16 @@ import base64
 import streamlit as st
 from google.cloud import vision
 from PIL import ImageOps, Image
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="srv538.hstgr.io",
+  user="u664201219_3H9aE",
+  password="OcrDiag@1bd",
+  database="u664201219_3H9aE",
+)
+
+st.write(mydb)
 
 @st.cache_data
 def get_annotations(img):
@@ -24,15 +34,17 @@ def is_float(string):
 
 st.title("OCR em dispositivos diagnósticos")
 
-genre = st.radio(
+equipamento = st.radio(
     "Qual o aparelho da imagem?",
     ["Termômetro", "Balança", "Medidor de pressão"],horizontal=True,index=None)
 
-nome = st.text_input("Nome do paciente:")
+nome = st.selectbox("Nome do paciente:", ["João", "Maria", "José"])
 cuidador = st.text_input("Nome do cuidador:")
 medico = st.text_input("Nome do médico:")
-if genre == "Termômetro":
+if equipamento == "Balança":
     altura = st.text_input("Altura do paciente:")
+elif equipamento == "Medidor de pressão":
+    batimentos = st.checkbox("Com batimentos cardíacos?")
 
 imagem_upload = st.file_uploader("Adicione um arquivo", type=("png", "jpg"))
 
