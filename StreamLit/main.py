@@ -3,16 +3,15 @@ import base64
 import streamlit as st
 from google.cloud import vision
 from PIL import ImageOps, Image
+from verificacao_dados import verificar_dados
 import mysql.connector
 
 mydb = mysql.connector.connect(
-  host="srv538.hstgr.io",
-  user="u664201219_3H9aE",
-  password="OcrDiag@1bd",
+  host="us-imm-web538.main-hosting.eu",
+  user="u664201219_ztbIa",
+  password="OcrDiag@2bd",
   database="u664201219_3H9aE",
 )
-
-st.write(mydb)
 
 @st.cache_data
 def get_annotations(img):
@@ -38,6 +37,8 @@ equipamento = st.radio(
     "Qual o aparelho da imagem?",
     ["Termômetro", "Balança", "Medidor de pressão"],horizontal=True,index=None)
 
+batimentos = False
+altura = 0
 nome = st.selectbox("Nome do paciente:", ["João", "Maria", "José"])
 cuidador = st.text_input("Nome do cuidador:")
 medico = st.text_input("Nome do médico:")
@@ -60,7 +61,13 @@ if imagem_upload is not None:
     for x in resultado_json["textAnnotations"]:
         if(is_float(x["description"]) ):
             resultado.append(x["description"])
+
+    if equipamento == "Balança":
+        resultado.append(altura)
+
     st.write(resultado)
+    parecer = verificar_dados(equipamento, resultado, batimentos)
+    st.write(parecer)
 else:
     st.write("Houve um erro ao carregar a imagem. Por favor, tente novamente.")
 
