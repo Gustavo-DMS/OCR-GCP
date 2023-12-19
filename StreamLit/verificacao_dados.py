@@ -26,9 +26,9 @@ def verificar_dados(tipo_equipamento,valores:list,batimentos:bool):
             return "Erro"
 
     if tipo_equipamento == "Termômetro":
-        valores[0] = round(float(valores[0]), 1)
         if len(valores) != 1:
             return "Erro"
+        valores[0] = round(float(valores[0]), 1)
         print(valores[0])
         if float(valores[0]) < 35.0:
             return "Hipotermia"
@@ -42,12 +42,12 @@ def verificar_dados(tipo_equipamento,valores:list,batimentos:bool):
             return "Erro"
 
     if tipo_equipamento == "Medidor de pressão":
-        valores[0] = round(float(valores[0]), 1)
-        valores[1] = round(float(valores[1]), 1)
         if batimentos:
             if len(valores) != 3:
                 return "Erro"
             return "fds"
+        valores[0] = round(float(valores[0]), 1)
+        valores[1] = round(float(valores[1]), 1)
         if not batimentos:
             valores.sort()
             if len(valores) != 2:

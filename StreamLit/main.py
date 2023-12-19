@@ -6,12 +6,36 @@ from PIL import ImageOps, Image
 from verificacao_dados import verificar_dados
 import mysql.connector
 
-mydb = mysql.connector.connect(
+
+@st.cache_data
+def get_users():
+    mydb = mysql.connector.connect(
   host="us-imm-web538.main-hosting.eu",
   user="u664201219_ztbIa",
   password="OcrDiag@2bd",
   database="u664201219_3H9aE",
 )
+    mycursor = mydb.cursor()
+    response = mycursor.execute("SELECT nome FROM paciente")
+    response = mycursor.fetchall()
+    mycursor.close()
+    mydb.close()
+    return response
+
+
+@st.cache_data
+def get_paciente_cuidador(paciente):
+    mydb = mysql.connector.connect(
+  host="us-imm-web538.main-hosting.eu",
+  user="u664201219_ztbIa",
+  password="OcrDiag@2bd",
+  database="u664201219_3H9aE",
+)
+    mycursor = mydb.cursor()
+    response = mycursor.execute("SELECT	cuidador_paciente.nome_cuidador FROM cuidador_paciente LEFT JOIN paciente_has_cuidador_paciente ON paciente_has_cuidador_paciente.cuidador_paciente_id_cuidador_paciente = cuidador_paciente.id_cuidador_paciente LEFT JOIN paciente ON paciente.id_paciente = paciente_has_cuidador_paciente.paciente_id_paciente WHERE paciente.nome LIKE %s", (paciente,))
+    response = mycursor.fetchall()
+    return response
+
 
 @st.cache_data
 def get_annotations(img):
@@ -39,8 +63,9 @@ equipamento = st.radio(
 
 batimentos = False
 altura = 0
-nome = st.selectbox("Nome do paciente:", ["João", "Maria", "José"])
-cuidador = st.text_input("Nome do cuidador:")
+paciente = get_users()
+nome = st.selectbox("Nome do paciente:", [x[0] for x in paciente],index=None)
+cuidader = st.selectbox("Nome do cuidador:", [x[0] for x in get_paciente_cuidador(nome)])
 medico = st.text_input("Nome do médico:")
 if equipamento == "Balança":
     altura = st.text_input("Altura do paciente:")
@@ -64,8 +89,9 @@ if imagem_upload is not None:
 
     if equipamento == "Balança":
         resultado.append(altura)
-
-    st.write(resultado)
+    for x in resultado:
+        st.write(x)
+    st.write("Parecer:")
     parecer = verificar_dados(equipamento, resultado, batimentos)
     st.write(parecer)
 else:
