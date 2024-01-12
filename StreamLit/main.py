@@ -36,6 +36,18 @@ def get_paciente_cuidador(paciente):
     response = mycursor.fetchall()
     return response
 
+@st.cache_data
+def get_paciente_medico(paciente):
+    mydb = mysql.connector.connect(
+  host="us-imm-web538.main-hosting.eu",
+  user="u664201219_ztbIa",
+  password="OcrDiag@2bd",
+  database="u664201219_3H9aE",
+)
+    mycursor = mydb.cursor()
+    response = mycursor.execute("SELECT rm.nome FROM	responsavel_medico rm LEFT JOIN paciente_has_responsavel_paciente phrp ON phrp.responsavel_medico_id_responsavel_medico = rm.id_responsavel_medico LEFT JOIN paciente p ON p.id_paciente = phrp.paciente_id_paciente WHERE p.nome  LIKE  %s", (paciente,))
+    response = mycursor.fetchall()
+    return response
 
 @st.cache_data
 def get_annotations(img):
@@ -65,8 +77,8 @@ batimentos = False
 altura = 0
 paciente = get_users()
 nome = st.selectbox("Nome do paciente:", [x[0] for x in paciente],index=None)
-cuidader = st.selectbox("Nome do cuidador:", [x[0] for x in get_paciente_cuidador(nome)])
-medico = st.text_input("Nome do médico:")
+cuidador = st.selectbox("Nome do cuidador:", [x[0] for x in get_paciente_cuidador(nome)])
+medico = st.selectbox("Nome do médico:", [x[0] for x in get_paciente_medico(nome)])
 if equipamento == "Balança":
     altura = st.text_input("Altura do paciente:")
 elif equipamento == "Medidor de pressão":
@@ -91,9 +103,12 @@ if imagem_upload is not None:
         resultado.append(altura)
     for x in resultado:
         st.write(x)
+    st.write("O restultado da extração acima está correto?")
+    left_column, right_column = st.columns(2)
+    botao_sim = left_column.button("Sim")
+    botao_nao = right_column.button("Não")
     st.write("Parecer:")
     parecer = verificar_dados(equipamento, resultado, batimentos)
     st.write(parecer)
 else:
     st.write("Houve um erro ao carregar a imagem. Por favor, tente novamente.")
-

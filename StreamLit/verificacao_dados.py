@@ -66,7 +66,3 @@ def verificar_dados(tipo_equipamento,valores:list,batimentos:bool):
                 return "Hipertensão sistólica isolada"
             else:
                 return "Erro"
-
-
-
-
