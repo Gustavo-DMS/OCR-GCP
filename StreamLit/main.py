@@ -3,6 +3,7 @@ import base64
 import streamlit as st
 from google.cloud import vision
 from PIL import ImageOps, Image
+from validacao_manual import validacao_manual
 from verificacao_dados import verificar_dados
 import mysql.connector
 
@@ -93,20 +94,26 @@ if imagem_upload is not None:
 
     bytes_data = imagem_upload.getvalue()
     resultado_json = get_annotations(bytes_data)
+
     st.write("Texto extraído da imagem:")
     resultado = []
     for x in resultado_json["textAnnotations"]:
         if(is_float(x["description"]) ):
             resultado.append(x["description"])
 
-    if equipamento == "Balança":
-        resultado.append(altura)
     for x in resultado:
         st.write(x)
     st.write("O restultado da extração acima está correto?")
+
     left_column, right_column = st.columns(2)
     botao_sim = left_column.button("Sim")
     botao_nao = right_column.button("Não")
+
+    if(botao_nao):
+        resultado = validacao_manual(equipamento)
+
+    if equipamento == "Balança":
+        resultado.append(altura)
     st.write("Parecer:")
     parecer = verificar_dados(equipamento, resultado, batimentos)
     st.write(parecer)

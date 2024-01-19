@@ -45,7 +45,7 @@ def verificar_dados(tipo_equipamento,valores:list,batimentos:bool):
         if batimentos:
             if len(valores) != 3:
                 return "Erro"
-            return "fds"
+            return "Batimentos cardiacos não implementados"
         valores[0] = round(float(valores[0]), 1)
         valores[1] = round(float(valores[1]), 1)
         if not batimentos:
