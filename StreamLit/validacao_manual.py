@@ -1,6 +1,6 @@
 import streamlit as st
 
-def validacao_manual(equipamento):
+def validacao_manual(equipamento,resultado) -> list:
     resultado = []
     if(equipamento == 'Termômetro'):
         temp = st.text_input("Qual a temperatura?")

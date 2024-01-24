@@ -3,7 +3,6 @@ def verificar_dados(tipo_equipamento,valores:list,batimentos:bool):
     if tipo_equipamento == "Balança":
         if len(valores) != 2:
             return "Erro"
-        valores[0] = round(float(valores[0]), 1)
         valores[1] = valores[1].replace(",", ".")
         IMC = float(valores[0]) / (float(valores[1])**2)
         if IMC < 16.0:
@@ -28,7 +27,6 @@ def verificar_dados(tipo_equipamento,valores:list,batimentos:bool):
     if tipo_equipamento == "Termômetro":
         if len(valores) != 1:
             return "Erro"
-        valores[0] = round(float(valores[0]), 1)
         print(valores[0])
         if float(valores[0]) < 35.0:
             return "Hipotermia"
@@ -46,8 +44,6 @@ def verificar_dados(tipo_equipamento,valores:list,batimentos:bool):
             if len(valores) != 3:
                 return "Erro"
             return "Batimentos cardiacos não implementados"
-        valores[0] = round(float(valores[0]), 1)
-        valores[1] = round(float(valores[1]), 1)
         if not batimentos:
             valores.sort()
             if len(valores) != 2:
